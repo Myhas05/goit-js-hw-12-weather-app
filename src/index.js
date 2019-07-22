@@ -1,5 +1,6 @@
 import './styles.css';
 import PNotify from '../node_modules/pnotify/dist/es/PNotify';
+import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
 import getGeoPosition from './js/getGeoPosition';
 import fetchWeather from './js/fetchWeather';
 PNotify.defaults.styling = 'material';
@@ -22,7 +23,8 @@ getGeoPosition()
   .then(responce => markupHtml(responce))
   .catch(() => {
     PNotify.error({
-      text: 'Нет права доступа к геопозиции, используйте поиск по имени города.',
+      text:
+        'Нет права доступа к геопозиции, используйте поиск по имени города.',
     });
   });
 

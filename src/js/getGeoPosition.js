@@ -1,11 +1,10 @@
 'use strict';
-
-export default function getGeoPosition() {
+const getGeoPosition = () => {
   const options = {
-    maximumAge: 1800000,
+    maximumAge: 180000,
   };
-
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject, options);
   });
-}
+};
+export default getGeoPosition;
